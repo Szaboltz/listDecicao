@@ -121,15 +121,20 @@ int q4() {
     if (userNum >= 0 && userNum <=5) {
         iaNum = num_pseudo();
         soma = userNum + iaNum;
-        if(soma % 2 == 0) {
-            printf("%d mais %d e igual a %d\n%d e PAR \nEu ganhei", userNum, iaNum, soma, soma);
-        } else {
-            printf("%d mais %d e igual a %d\n%d e IMPAR\nO computador ganhou", userNum, iaNum, soma, soma);
-        }
+        if(soma % 2 == 0 && userOp == 'p') {
+            printf("%d mais %d e igual a %d\n%d e PAR\nEu ganhei", userNum, iaNum, soma, soma);
+        } else if (soma % 2 != 0 && userOp == 'i'){
+            printf("%d mais %d e igual a %d\n%d e IMPAR\nEu ganhei", userNum, iaNum, soma, soma);
+        } else if (soma % 2 == 0 && iaOp == 'p'){
+        	printf("%d mais %d e igual a %d\n%d e PAR\nO computador ganhou", userNum, iaNum, soma, soma);
+		} else {
+			printf("%d mais %d e igual a %d\n%d e IMPAR\nO computador ganhou", userNum, iaNum, soma, soma);
+		}
     } else {
         printf("Numero incorreto");
     }
-
+	
+	return 0;
 
 }
 
@@ -140,8 +145,8 @@ int main() {
     //printf("\n");
     //q3();
     //printf("\n");
-    q4();
-    printf("\n");
+    //q4();
+    //printf("\n");
 
 
     return 0;
